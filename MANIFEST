@@ -1,0 +1,21 @@
+ChangeLog
+Changes
+INSTALL
+lib/Sys/Filesystem/AIX.pm
+lib/Sys/Filesystem/Cygwin.pm
+lib/Sys/Filesystem/Darwin.pm
+lib/Sys/Filesystem/Dummy.pm
+lib/Sys/Filesystem/Freebsd.pm
+lib/Sys/Filesystem/Linux.pm
+lib/Sys/Filesystem.pm
+lib/Sys/Filesystem/Solaris.pm
+lib/Sys/Filesystem/Unix.pm
+lib/Sys/Filesystem/Win32.pm
+LICENSE
+Makefile.PL
+MANIFEST
+META.yml                                 Module meta-data (added by MakeMaker)
+NOTICE
+README
+t/01test.t
+TODO
