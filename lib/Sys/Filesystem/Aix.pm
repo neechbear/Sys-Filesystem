@@ -19,7 +19,7 @@
 #
 ############################################################
 
-package Sys::Filesystem::AIX;
+package Sys::Filesystem::Aix;
 # vim:ts=4:sw=4:tw=78
 
 use strict;
@@ -27,7 +27,7 @@ use FileHandle;
 use Carp qw(croak);
 
 use vars qw($VERSION);
-$VERSION = '1.03' || sprintf('%d', q$Revision$ =~ /(\d+)/g);
+$VERSION = '1.04' || sprintf('%d', q$Revision$ =~ /(\d+)/g);
 
 sub new {
 	ref(my $class = shift) && croak 'Class name required';
@@ -76,7 +76,7 @@ sub new {
 
 =head1 NAME
 
-Sys::Filesystem::AIX - Return AIX filesystem information to Sys::Filesystem
+Sys::Filesystem::Aix - Return AIX filesystem information to Sys::Filesystem
 
 =head1 SYNOPSIS
 
