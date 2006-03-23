@@ -27,15 +27,15 @@ use FileHandle;
 use Carp qw(croak);
 
 use vars qw($VERSION);
-$VERSION = sprintf('%d.%02d', q$Revision$ =~ /(\d+)/g);
+$VERSION = '1.06' || sprintf('%d', q$Revision$ =~ /(\d+)/g);
 
 sub new {
-        ref(my $class = shift) && croak 'Class name required';
-        my %args = @_;
-        my $self = { };
+	ref(my $class = shift) && croak 'Class name required';
+	my %args = @_;
+	my $self = { };
 
-        bless($self,$class);
-        return $self;
+	bless($self,$class);
+	return $self;
 }
 
 1;

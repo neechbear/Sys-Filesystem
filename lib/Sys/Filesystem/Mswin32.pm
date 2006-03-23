@@ -28,7 +28,7 @@ use Win32::DriveInfo;
 use Carp qw(croak);
 
 use vars qw($VERSION);
-$VERSION = sprintf('%d.%02d', q$Revision$ =~ /(\d+)/g);
+$VERSION = '1.04' || sprintf('%d', q$Revision$ =~ /(\d+)/g);
 
 sub new {
 	ref(my $class = shift) && croak 'Class name required';

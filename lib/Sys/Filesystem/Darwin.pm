@@ -26,7 +26,7 @@ use strict;
 use Carp qw(croak);
 
 use vars qw($VERSION);
-$VERSION = sprintf('%d.%02d', q$Revision$ =~ /(\d+)/g);
+$VERSION = '0.2' || sprintf('%d', q$Revision$ =~ /(\d+)/g);
 
 sub new {
 	my $class = shift;
