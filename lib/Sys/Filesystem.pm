@@ -48,8 +48,8 @@ sub new {
 	# How to query
 	my $self = { %args };
 	$self->{osname} = $^O;
-	my @query_order = ($self->{osname});
-	push @query_order, $self->{osname} eq 'MSWin32' ? 'Win32' : 'Unix';
+	my @query_order = (ucfirst($self->{osname}));
+	push @query_order, $self->{osname} =~ /Win32/i ? 'Win32' : 'Unix';
 	push @query_order, 'Dummy';
 
 	# Try and query
@@ -60,6 +60,7 @@ sub new {
 		eval { eval($code); };
 		if (defined $obj && ref($obj) && !$@) {
 			$self->{filesystems} = $obj;
+			last;
 		}
 	}
 
