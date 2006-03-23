@@ -1,6 +1,6 @@
 ############################################################
 #
-#   $Id: Filesystem.pm,v 1.20 2006/01/28 13:17:34 nicolaw Exp $
+#   $Id$
 #   Sys::Filesystem - Retrieve list of filesystems and their properties
 #
 #   Copyright 2004,2005,2006 Nicola Worthington
@@ -28,7 +28,7 @@ use Carp qw(croak cluck confess);
 
 use constant DEBUG => $ENV{DEBUG} ? 1 : 0;
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = sprintf('%d.%02d', q$Revision: 1.20 $ =~ /(\d+)/g);
+$VERSION = '1.19' || sprintf('%d.%02d', q$Revision$ =~ /(\d+)/g);
 
 sub new {
 	# Check we're being called correctly with a class name
@@ -57,7 +57,7 @@ sub new {
 		my $obj = undef;
 		my $code = sprintf('require %s::%s; $obj = %s::%s->new(%%args);',
 						__PACKAGE__, $_, __PACKAGE__, $_);
-		eval { do($code); };
+		eval { eval($code); };
 		if (defined $obj && ref($obj) && !$@) {
 			$self->{filesystems} = $obj;
 		}
@@ -470,7 +470,7 @@ L<perlport>, L<Solaris::DeviceTree>, L<Win32::DriveInfo>
 
 =head1 VERSION
 
-$Id: Filesystem.pm,v 1.20 2006/01/28 13:17:34 nicolaw Exp $
+$Id$
 
 =head1 AUTHOR
 
@@ -499,83 +499,4 @@ This software is licensed under The Apache Software License, Version 2.0.
 L<http://www.apache.org/licenses/LICENSE-2.0>
 
 =cut
-
-
-
-###############################################################################
-# End
-
-__DATA__
-
-__END__
- 
-
-
-###############################################################################
-# CVS changelog
-
-$Log: Filesystem.pm,v $
-Revision 1.20  2006/01/28 13:17:34  nicolaw
-*** empty log message ***
-
-Revision 1.19  2005/12/30 01:17:46  nicolaw
-Changed license to Apache 2.0
-
-Revision 1.18  2005/12/29 18:02:09  nicolaw
-*** empty log message ***
-
-Revision 1.17  2005/12/08 17:30:29  nicolaw
-*** empty log message ***
-
-Revision 1.16  2005/12/08 15:44:11  nicolaw
-Modified POD
-
-Revision 1.15  2005/12/02 16:06:51  nicolaw
-Updated for revision number and email address
-
-Revision 1.14  2005/01/30 18:10:41  nicolaw
-Added some new filesystem property aliases and reference to AIX helper module
-
-Revision 1.13  2005/01/26 14:25:45  nicolaw
-Added extra documentation and the device option for the filesystems
-method.
-
-Revision 1.12  2005/01/13 23:37:07  nicolaw
-Updated POD.
-
-Revision 1.11  2004/10/06 16:24:58  nicolaw
-*** empty log message ***
-
-Revision 1.10  2004/10/06 15:25:00  nicolaw
-Fix from Win32 to MSWin32
-
-Revision 1.9  2004/10/05 14:12:38  nicolaw
-POD whitespace fix
-
-Revision 1.8  2004/09/30 14:03:43  nicolaw
-Added the regular_filesystems() method
-
-Revision 1.7  2004/09/30 13:12:00  nicolaw
-Added a DESTROY stub so that AUTO_LOAD doesn't catch it and complain that
-it doesn't have a filename to play with
-
-Revision 1.6  2004/09/29 12:01:23  nicolaw
-Added aliases and condition of Unix module not if Win32
-
-Revision 1.5  2004/09/29 10:43:12  nicolaw
-Added POD
-
-Revision 1.4  2004/09/28 16:35:31  nicolaw
-*** empty log message ***
-
-Revision 1.3  2004/09/28 16:01:22  nicolaw
-*** empty log message ***
-
-Revision 1.2  2004/09/28 14:30:18  nicolaw
-*** empty log message ***
-
-Revision 1.1  2004/09/28 13:53:20  nicolaw
-*** empty log message ***
-
-
 

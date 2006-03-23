@@ -1,0 +1,14 @@
+^tarballs
+^_build
+^Build$
+^blib
+~$
+^\.
+\.sw[op]$
+\.bak$
+\.rrd$
+\.ppd$
+^MANIFEST\.SKIP$
+CVS
+.svn
+^DistBuild\.PL$

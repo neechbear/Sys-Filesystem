@@ -44,8 +44,7 @@ sub new {
 	if ($fstab->open($args{fstab})) {
 		my $current_filesystem = '*UNDEFINED*';
 		while (<$fstab>) {
-			next if /^\s*#/;
-			next if /^\s*$/;
+			next if (/^\s*#/ || /^\s*$/);
 
 			# This doesn't allow for a mount point with a space in it
 			if (/^(\S+):\s*$/) {
