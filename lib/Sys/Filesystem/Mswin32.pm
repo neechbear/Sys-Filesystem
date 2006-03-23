@@ -1,6 +1,6 @@
 ############################################################
 #
-#   $Id: Win32.pm,v 1.5 2006/01/28 13:17:35 nicolaw Exp $
+#   $Id$
 #   Sys::Filesystem - Retrieve list of filesystems and their properties
 #
 #   Copyright 2004,2005,2006 Nicola Worthington
@@ -28,7 +28,7 @@ use Win32::DriveInfo;
 use Carp qw(croak);
 
 use vars qw($VERSION);
-$VERSION = sprintf('%d.%02d', q$Revision: 1.5 $ =~ /(\d+)/g);
+$VERSION = sprintf('%d.%02d', q$Revision$ =~ /(\d+)/g);
 
 sub new {
 	ref(my $class = shift) && croak 'Class name required';
@@ -68,7 +68,7 @@ See L<Sys::Filesystem>.
 
 =head1 VERSION
 
-$Id: Win32.pm,v 1.5 2006/01/28 13:17:35 nicolaw Exp $
+$Id$
 
 =head1 AUTHOR
 

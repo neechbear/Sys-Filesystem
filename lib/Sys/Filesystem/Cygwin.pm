@@ -1,6 +1,6 @@
 ############################################################
 #
-#   $Id: Cygwin.pm,v 1.8 2006/01/28 13:17:35 nicolaw Exp $
+#   $Id$
 #   Sys::Filesystem - Retrieve list of filesystems and their properties
 #
 #   Copyright 2004,2005,2006 Nicola Worthington
@@ -27,7 +27,7 @@ use FileHandle;
 use Carp qw(croak);
 
 use vars qw($VERSION);
-$VERSION = sprintf('%d.%02d', q$Revision: 1.8 $ =~ /(\d+)/g);
+$VERSION = sprintf('%d.%02d', q$Revision$ =~ /(\d+)/g);
 
 sub new {
 	ref(my $class = shift) && croak 'Class name required';
@@ -117,7 +117,7 @@ L<http://cygwin.com/cygwin-ug-net/using.html>
 
 =head1 VERSION
 
-$Id: Cygwin.pm,v 1.8 2006/01/28 13:17:35 nicolaw Exp $
+$Id$
 
 =head1 AUTHOR
 
