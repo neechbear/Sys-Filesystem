@@ -28,7 +28,7 @@ use Carp qw(croak cluck confess);
 
 use constant DEBUG => $ENV{DEBUG} ? 1 : 0;
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = '1.20' || sprintf('%d', q$Revision$ =~ /(\d+)/g);
+$VERSION = '1.21' || sprintf('%d', q$Revision$ =~ /(\d+)/g);
 
 sub new {
 	# Check we're being called correctly with a class name
