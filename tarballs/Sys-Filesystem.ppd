@@ -1,10 +1,10 @@
-<SOFTPKG NAME="Sys-Filesystem" VERSION="1,20,0,0">
+<SOFTPKG NAME="Sys-Filesystem" VERSION="1,21,0,0">
     <TITLE>Sys-Filesystem</TITLE>
     <ABSTRACT>Retrieve list of filesystems and their properties</ABSTRACT>
     <AUTHOR>Nicola Worthington &lt;nicolaw@cpan.org&gt;</AUTHOR>
     <IMPLEMENTATION>
         <DEPENDENCY NAME="FileHandle" VERSION="0,0,0,0" />
         <DEPENDENCY NAME="Carp" VERSION="0,0,0,0" />
-        <CODEBASE HREF="PPM-Sys-Filesystem-1.20.tar.gz" />
+        <CODEBASE HREF="PPM-Sys-Filesystem-1.21.tar.gz" />
     </IMPLEMENTATION>
 </SOFTPKG>
