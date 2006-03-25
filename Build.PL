@@ -21,7 +21,7 @@ $build = Module::Build->new(
 				) : () ),
 		},
 
-		build_requires => {
+		recommends => {
 			'Test'                => 0,
 			'Test::More'          => 0,
 			'Test::Pod'           => 0,
