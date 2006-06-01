@@ -11,6 +11,7 @@
 	field in /etc/filesystems.
 	Added note in main POD warning people not to confuse "type" and
 	"vfs" when querying values under AIX.
+	Altered unit tests to be more reliable over different setups.
 
 1.21
 	Typo in Build.PL. Changed "build_requires" to
