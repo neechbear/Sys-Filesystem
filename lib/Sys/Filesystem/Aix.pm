@@ -46,8 +46,8 @@ sub new {
 		while (<$fstab>) {
 			next if (/^\s*#/ || /^\s*$/);
 
-			# This doesn't allow for a mount point with a space in it
-			if (/^(\S+):\s*$/) {
+			# Found a new filesystem group
+			if (/^\s*(.+?):\s*$/) {
 				$current_filesystem = $1;
 				$self->{$current_filesystem}->{filesystem} = $1;
 
@@ -55,9 +55,10 @@ sub new {
 			} elsif (my ($key,$value) = $_ =~ /^\s*([a-z]{3,8})\s+=\s+"?(.+)"?\s*$/) {
 				$self->{$current_filesystem}->{$key} = $value;
 				$self->{$current_filesystem}->{unmounted} = -1; # Unknown mount state?
-
-				if ($key eq 'type' && grep(/^$value$/, @special_fs)) {
-					$self->{$current_filesystem}->{special} = 1;
+				if ($key eq 'vfs') {
+					if (grep(/^$value$/, @special_fs)) {
+						$self->{$current_filesystem}->{special} = 1;
+					}
 				}
 			}
 		}
