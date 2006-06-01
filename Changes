@@ -1,4 +1,14 @@
 1.21
+	Added CREDITS.
+	Fixed logic in Filesystem.pm:filesystems() where the inversion of
+	the 'regaular' and 'special' paramaters was not being handled
+	correctly, causing an incorrect selection of filesystems to be
+	returned sometimes.
+	Added fd ctfs devfs objfs and procfs as special filesystem types
+	in Solaris.pm.
+	Added procfs as a special filesyetem type to Aix.pm.
+
+1.21
 	Typo in Build.PL. Changed "build_requires" to
 	be "recommends".
 

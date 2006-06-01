@@ -42,7 +42,7 @@ sub new {
 	my @fstab_keys = qw(device device_to_fsck mount_point fs_vfstype fs_freq mount_at_boot fs_mntops);
 	my @mtab_keys = qw(device mount_point fs_vfstype fs_mntops time);
 
-	my @special_fs = qw(swap proc tmpfs nfs mntfs autofs lofs cachefs);
+	my @special_fs = qw(swap proc procfs tmpfs nfs mntfs autofs lofs fd ctfs devfs objfs cachefs);
 	local $/ = "\n";
 
 	# Read the fstab

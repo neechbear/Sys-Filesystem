@@ -37,7 +37,7 @@ sub new {
 	$args{fstab} ||= '/etc/filesystems';
 
 	my @fstab_keys = qw(account boot check dev free mount nodename size type vfs vol log);
-	my @special_fs = qw(swap proc tmpfs nfs mntfs autofs);
+	my @special_fs = qw(swap procfs proc tmpfs nfs mntfs autofs);
 
 	# Read the fstab
 	my $fstab = new FileHandle;

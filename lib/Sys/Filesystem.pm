@@ -28,7 +28,7 @@ use Carp qw(croak cluck confess);
 
 use constant DEBUG => $ENV{DEBUG} ? 1 : 0;
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = '1.21' || sprintf('%d', q$Revision$ =~ /(\d+)/g);
+$VERSION = '1.22' || sprintf('%d', q$Revision$ =~ /(\d+)/g);
 
 sub new {
 	# Check we're being called correctly with a class name
@@ -108,7 +108,7 @@ sub filesystems {
 	# Invert logic for regular
 	if (exists $params->{regular}) {
 		delete $params->{regular};
-		$params->{regular} = undef;
+		$params->{special} = undef;
 	}
 
 	my @filesystems = ();
@@ -432,8 +432,6 @@ Sys::Filesystem module if no suitable platform specific module can be found
 or sucessfully loaded. This is the last module to be tried, in order of
 platform, Unix (if not on Win32), and then Dummy.
 
-Maintained by Nicola Worthington.
-
 =head2 Unix
 
 The Unix module is intended to provide a "best guess" failover result to the
@@ -442,30 +440,17 @@ found, and the platform is not 'MSWin32'.
 
 This module requires additional work to improve it's guestimation abilities.
 
-=head2 Linux
-
-Maintained by Nicola Worthington.
-
 =head2 Darwin
 
-Written and maintained by Christian Renz <crenz@web42.com>.
-
-=head2 Solaris
-
-Initial revision written by Nicola Worthington. Please contact me if you
-would like to maintain this.
-
-=head2 AIX
-
-Initial revision written by Nicola Worthington. Please contact me if you
-would like to maintain this.
+Frist written by Christian Renz <crenz@web42.com>.
 
 =head2 Win32
 
-Initial revision written by Nicola Worthington. Please contact me if you
-would like to maintain this.
-
 This isn't written yet. It's on the top of the (very slow) TODO list.
+
+=head2 Other
+
+Linux, Solaris, AIX.
 
 =head2 OS Identifiers
 
@@ -495,15 +480,7 @@ L<http://perlgirl.org.uk>
 
 =head1 ACKNOWLEDGEMENTS
 
-Christian Renz <crenz@web42.com> is the maintainer
-of L<Sys::Filesystem::Darwin>.
-
-Brad Greenlee <brad@footle.org> for suggesting and patching for the
-filesystem(device => "string") method functionality.
-
-L<http://publib.boulder.ibm.com/infocenter/pseries/index.jsp?topic=/com.ibm.aix.doc/files/aixfiles/filesystems.htm>
-
-L<http://www.unixguide.net/unixguide.shtml>
+See CREDITS in the distribution tarball.
 
 =head1 COPYRIGHT
 
