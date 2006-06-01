@@ -448,9 +448,15 @@ Frist written by Christian Renz <crenz@web42.com>.
 
 This isn't written yet. It's on the top of the (very slow) TODO list.
 
+=head2 AIX
+
+Please be aware that the AIX /etc/filesystems file has both a "type" and
+"vfs" field. The "type" field should not be confused with the filesystem
+format/type (that is stored in the "vfs" field).
+
 =head2 Other
 
-Linux, Solaris, AIX.
+Linux, Solaris, Cygwin, FreeBSD.
 
 =head2 OS Identifiers
 
