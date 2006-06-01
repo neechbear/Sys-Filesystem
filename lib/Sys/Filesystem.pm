@@ -69,8 +69,8 @@ sub new {
 			device          => [ qw(fs_spec dev) ],
 			filesystem      => [ qw(fs_file mount_point) ],
 			mount_point     => [ qw(fs_file filesystem) ],
-			type            => [ qw(fs_vfstype) ],
-			format          => [ qw(fs_vfstype vfs) ],
+			type            => [ qw(fs_vfstype vfs) ],
+			format          => [ qw(fs_vfstype vfs vfstype) ],
 			options         => [ qw(fs_mntops) ],
 			check_frequency => [ qw(fs_freq) ],
 			check_order     => [ qw(fs_passno) ],
@@ -452,7 +452,9 @@ This isn't written yet. It's on the top of the (very slow) TODO list.
 
 Please be aware that the AIX /etc/filesystems file has both a "type" and
 "vfs" field. The "type" field should not be confused with the filesystem
-format/type (that is stored in the "vfs" field).
+format/type (that is stored in the "vfs" field). You may wish to use the
+"format" field when querying for filesystem types, since it is aliased to
+be more reliable accross different platforms.
 
 =head2 Other
 
